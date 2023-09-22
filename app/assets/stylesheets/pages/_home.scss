@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+body {
+  background-color: #3E0098;
+  color: white;
+  font-family: "Luckiest Guy";
+}
+
+img {
+  margin: 0 auto;
+}
+
+#home {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+#remaining {
+  margin: auto;
+}
+
+.btn {
+  width: 250px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgb(240, 134, 0);
+  box-shadow: 0px 0px 10px 2px rgba(238, 221, 4, 0.55);
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #3E0098;
+  font-size: 32px;
+
+  a {
+    text-decoration: none;
+    color: #3E0098;
+  }
+
+  &:hover {
+    background:  rgba(238, 221, 4, 0.95);
+    box-shadow: 0px 0px 10px 2px rgba(240, 134, 0, 0.55);
+  }
+}
+
+#options {
+  height: 372px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

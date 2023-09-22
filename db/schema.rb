@@ -10,8 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_22_152130) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cards", force: :cascade do |t|
+    t.integer "top_number"
+    t.integer "bottom_number"
+    t.boolean "played"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hands", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_hands_on_card_id"
+    t.index ["player_id"], name: "index_hands_on_player_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slam_cards", force: :cascade do |t|
+    t.bigint "hand_id", null: false
+    t.bigint "slam_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hand_id"], name: "index_slam_cards_on_hand_id"
+    t.index ["slam_id"], name: "index_slam_cards_on_slam_id"
+  end
+
+  create_table "slams", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "hands", "cards"
+  add_foreign_key "hands", "players"
+  add_foreign_key "slam_cards", "hands"
+  add_foreign_key "slam_cards", "slams"
 end

@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container" data-controller="home">
+  <div id="home">
+    <div class="d-flex">
+      <img src="assets/scout.png" alt="background circus tent image">
+    </div>
+    <div id="remaining">
+      <div class="btn d-flex mt-2" data-action="click->home#scroll">
+        NEW GAME
+      </div>
+    </div>
+  </div>
+
+  <div id="options">
+      <div class="btn d-flex mt-2">
+        <%= link_to "2 PLAYERS" %>
+      </div>
+      <div class="btn d-flex mt-2">
+        <%= link_to "3 PLAYERS" %>
+      </div>
+      <div class="btn d-flex mt-2">
+        <%= link_to "4 PLAYERS" %>
+      </div>
+      <div class="btn d-flex mt-2">
+        <%= link_to "5 PLAYERS" %>
+      </div>
+  </div>
+</div>
