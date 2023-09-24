@@ -11,18 +11,10 @@
   </div>
 
   <div id="options">
-      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <%= link_to "2 PLAYERS" %>
-      </div>
-      <div class="btn mt-2">
-        <%= link_to "3 PLAYERS" %>
-      </div>
-      <div class="btn mt-2">
-        <%= link_to "4 PLAYERS" %>
-      </div>
-      <div class="btn mt-2">
-        <%= link_to "5 PLAYERS" %>
-      </div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">2 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"">3 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"">4 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"">5 PLAYERS</div>
   </div>
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -33,9 +25,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <button type="button" class="btn my-3" data-bs-dismiss="modal">EASY</button>
-        <button type="button" class="btn my-3" data-bs-dismiss="modal">MEDIUM</button>
-        <button type="button" class="btn my-3" data-bs-dismiss="modal">HARD</button>
+        <%= link_to "EASY", game_path, class: "btn my-3" %>
+        <%= link_to "MEDIUM", game_path, class: "btn my-3" %>
+        <%= link_to "DIFFICULT", game_path, class: "btn my-3" %>
       </div>
     </div>
   </div>
