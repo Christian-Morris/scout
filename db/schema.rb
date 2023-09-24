@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_152130) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_175838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
     t.integer "top_number"
     t.integer "bottom_number"
-    t.boolean "played"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_152130) do
     t.bigint "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "played"
     t.index ["card_id"], name: "index_hands_on_card_id"
     t.index ["player_id"], name: "index_hands_on_player_id"
   end
