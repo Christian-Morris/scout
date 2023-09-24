@@ -20,6 +20,7 @@ img {
 }
 
 .btn {
+  display: flex;
   width: 250px;
   height: 50px;
   border-radius: 8px;
@@ -47,4 +48,33 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.modal-content {
+  background-color: rgb(240, 134, 0);
+  border-radius: 8px;
+
+  .btn{
+    background-color: #3E0098;
+    color:rgb(240, 134, 0);
+  }
+}
+
+.modal-title {
+  font-family: "Luckiest Guy";
+  font-size: 32px !important;
+  margin-left: 16px;
+  color: rgb(238, 221, 4);
+  text-shadow: 1px 1px 4px #3E0098;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
