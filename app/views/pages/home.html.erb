@@ -11,10 +11,10 @@
   </div>
 
   <div id="options">
-      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">2 PLAYERS</div>
-      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"">3 PLAYERS</div>
-      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"">4 PLAYERS</div>
-      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"">5 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-players="2" data-action="click->home#show">2 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-players="3" data-action="click->home#show">3 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-players="4" data-action="click->home#show">4 PLAYERS</div>
+      <div class="btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-players="5" data-action="click->home#show">5 PLAYERS</div>
   </div>
 
   <!-- Modal -->
@@ -24,11 +24,12 @@
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">DIFFICULTY</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <% selected_players = 0 %>
         </div>
         <div class="modal-body">
-          <%= link_to "EASY", game_path, class: "btn my-3" %>
-          <%= link_to "MEDIUM", game_path, class: "btn my-3" %>
-          <%= link_to "DIFFICULT", game_path, class: "btn my-3" %>
+          <div class="btn my-3", data-action="click->home#start", data-difficulty="easy">EASY</div>
+          <div class="btn my-3", data-action="click->home#start", data-difficulty="medium">MEDIUM</div>
+          <div class="btn my-3", data-action="click->home#start", data-difficulty="hard">HARD</div>
         </div>
       </div>
     </div>
